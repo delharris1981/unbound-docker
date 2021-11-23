@@ -141,9 +141,9 @@ Instead of using this image's default configuration for Unbound, you may supply 
 
 ```console
 docker run --name=my-unbound \
---volume=/my-directory/unbound:/opt/unbound/etc/unbound/ \
---publish=53:53/tcp \
---publish=53:53/udp \
+--volume=/volume2/docker/unbound:/opt/unbound/etc/unbound/ \
+--publish=3553:53/tcp \
+--publish=3553:53/udp \
 --restart=unless-stopped \
 --detach=true \
 mvance/unbound:latest
